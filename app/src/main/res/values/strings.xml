@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Full notes</string>
+    <string name="baseTitle">Food</string>
+    <string name = "baseText">Buy Food</string>
 </resources>
