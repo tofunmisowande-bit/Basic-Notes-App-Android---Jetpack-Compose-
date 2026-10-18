@@ -2,13 +2,9 @@ package com.example.fullnotes.ui.presentation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -26,21 +22,15 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.fullnotes.data.NotesDao
-import com.example.fullnotes.data.TextScreen
 import com.example.fullnotes.model.Note
 import com.example.fullnotes.model.NotesViewModel
 import java.time.LocalDateTime
-import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -157,18 +147,3 @@ fun NotesTextScreen(
     }
 }
 
-@RequiresApi(Build.VERSION_CODES.O)
-@Preview(showBackground = true)
-@Composable
-fun NotesTextScreenPreview(){
-    val dummyDao = object : NotesDao {
-        override suspend fun insertNote(notes: Note) {}
-        override suspend fun deleteNote(notes: Note) {}
-        override suspend fun getNotesById(id: Int): Note? = null
-        override fun getAllNotes(): kotlinx.coroutines.flow.Flow<List<Note>> = kotlinx.coroutines.flow.emptyFlow()
-    }
-    NotesTextScreen(
-        onNavigateBack = {},
-        viewModel = NotesViewModel(dummyDao)
-    )
-}
