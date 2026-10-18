@@ -19,21 +19,16 @@ A basic notes app built with Kotlin, Jetpack Compose, and Room, featuring add, e
 * Jetpack Compose
 * Room Database
 * ViewModel + Flow
+* Navigation
 
 ---
 
-## Screenshots
-## 📸 Screenshot
 
-<p align="center">
-<img width="300"  alt="Screenshot_main" src="https://github.com/user-attachments/assets/58396985-d1c9-48dc-827d-959ab98e3578" />
-</p>
-
----
 
 ## What I Learned
 
 * State management in Jetpack Compose
 * Using Room for local data storage
 * MVVM architecture basics
+* Navigation
 
